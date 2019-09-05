@@ -1,4 +1,24 @@
 
+-- |
+-- This package provides functionality for equality by only Constructors.
+-- That means ConstrEq is ignore all parameters of a constructor and only makes a difference based on the constructor.
+--
+-- Let us look at an example:
+--
+-- @
+-- data T = T1 | T2 Int | T3 Int
+--   deriving 'Generic'
+-- 
+-- instance ConstrEq T
+--
+-- constrEq T1 (T2 0)     == False
+-- constrEq T1 T1         == True
+-- constrEq (T2 1) (T2 2) == True
+-- constrEq (T2 3) (T3 3) == False
+-- @
+-- 
+
+
 module Generics.Deriving.ConstrEq where
 
 import GHC.Generics
@@ -9,6 +29,8 @@ import System.IO.Error (IOErrorType)
 import Foreign.ForeignPtr (ForeignPtr)
 import Foreign.Ptr
 import Foreign.StablePtr (StablePtr)
+
+
 
 
 class ConstrEq' f where

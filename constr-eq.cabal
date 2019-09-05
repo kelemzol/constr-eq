@@ -4,8 +4,12 @@ cabal-version:       >=1.10
 
 name:                constr-eq
 version:             0.1.0.0
--- synopsis:
--- description:
+synopsis:            Equality by only Constructor
+description:
+    This package provides functionality for equality by only Constructors.
+    That means ConstrEq is ignore all parameters of a constructor and only makes a difference based on the constructor.
+
+
 homepage:            https://github.com/kelemzol/constr-eq
 -- bug-reports:
 license:             BSD3
@@ -13,7 +17,7 @@ license-file:        LICENSE
 author:              Zoltan Kelemen
 maintainer:          voidp0@gmail.com
 -- copyright:
--- category:
+category:            Generics
 build-type:          Simple
 extra-source-files:  CHANGELOG.md
 
@@ -24,7 +28,7 @@ library
   build-depends:       base >=4.12 && <4.13
   hs-source-dirs:      src
   default-language:    Haskell2010
-  extensions:          TypeOperators
+  other-extensions:    TypeOperators
                      , DefaultSignatures
                      , FlexibleContexts
                      , TypeSynonymInstances
