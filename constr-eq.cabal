@@ -10,7 +10,7 @@ homepage:            https://github.com/kelemzol/constr-eq
 -- bug-reports:
 license:             BSD3
 license-file:        LICENSE
-author:              Zolt n Kelemen
+author:              Zoltan Kelemen
 maintainer:          voidp0@gmail.com
 -- copyright:
 -- category:
@@ -18,9 +18,13 @@ build-type:          Simple
 extra-source-files:  CHANGELOG.md
 
 library
-  -- exposed-modules:
+  exposed-modules:   Generics.Deriving.ConstrEq
   -- other-modules:
   -- other-extensions:
   build-depends:       base >=4.12 && <4.13
   hs-source-dirs:      src
   default-language:    Haskell2010
+  extensions:          TypeOperators
+                     , DefaultSignatures
+                     , FlexibleContexts
+                     , TypeSynonymInstances
